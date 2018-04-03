@@ -24,17 +24,17 @@ import { TodoListService } from '../todo-list.service';
   styleUrls: ['./list-manager.component.css']
 })
 export class ListManagerComponent implements OnInit {
-  title:string = 'My Todos';
+  title = 'My Todos';
   todoList: any[];
 
-  constructor(private todoListService:TodoListService) {
+  constructor(private todoListService: TodoListService) {
   }
 
   ngOnInit() {
     this.todoList = this.todoListService.getTodoList();
   }
 
-  addItem(title:string) {
+  addItem(title: string) {
     this.todoList = this.todoListService.addItem({ title });
   }
 

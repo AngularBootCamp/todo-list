@@ -25,10 +25,10 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 })
 export class ItemComponent implements OnInit {
   @Input() item: any;
-  @Output() remove:EventEmitter<any> = new EventEmitter();
-  @Output() changeTitle:EventEmitter<any> = new EventEmitter();
+  @Output() remove: EventEmitter<any> = new EventEmitter();
+  @Output() changeTitle: EventEmitter<any> = new EventEmitter();
 
-  private editing:boolean = false;
+  editing = false;
 
   constructor() {
   }

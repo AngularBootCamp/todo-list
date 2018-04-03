@@ -4,7 +4,7 @@ import { TodoListStorageService } from './todo-list-storage.service';
 @Injectable()
 export class TodoListService {
 
-  constructor(private storage:TodoListStorageService) {
+  constructor(private storage: TodoListStorageService) {
   }
 
   getTodoList() {

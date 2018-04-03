@@ -18,9 +18,9 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
-  @Input() title:string = '';
-  @Output() submit:EventEmitter<string> = new EventEmitter();
-  @Output() cancel:EventEmitter<any> = new EventEmitter();
+  @Input() title = '';
+  @Output() submit: EventEmitter<string> = new EventEmitter();
+  @Output() cancel: EventEmitter<any> = new EventEmitter();
 
   constructor() {
   }
@@ -28,7 +28,7 @@ export class InputComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeTitle(newTitle:string):void {
+  changeTitle(newTitle: string): void {
     this.submit.emit(newTitle);
   }
 
