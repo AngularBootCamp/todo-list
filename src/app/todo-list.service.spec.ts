@@ -1,12 +1,14 @@
-/* tslint:disable:no-unused-variable */
-
 import { TestBed, async, inject } from '@angular/core/testing';
 import { TodoListService } from './todo-list.service';
+import { TodoListStorageService } from './todo-list-storage.service';
 
 describe('Service: TodoList', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TodoListService]
+      providers: [
+        TodoListStorageService,
+        TodoListService
+      ]
     });
   });
 
