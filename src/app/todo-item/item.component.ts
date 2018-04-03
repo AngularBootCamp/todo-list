@@ -3,19 +3,19 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 @Component({
   selector: 'todo-item',
   template: `
-    <div class="todo-item">
+    <div class="todo-item" *ngIf="item">
       <input class="todo-checkbox"
              type="checkbox">
-      
+
       <span class="todo-title"
-            [hidden]="editing" 
+            [hidden]="editing"
             (click)="editItem()">{{ item.title }}</span>
-      
+
       <todo-input [hidden]="!editing"
                   [title]="item.title"
-                  (submit)="changeItemTitle($event)" (cancel)="cancelEdit($event)">               
+                  (submit)="changeItemTitle($event)" (cancel)="cancelEdit($event)">
       </todo-input>
-      
+
       <button class="btn btn-red" (click)="removeItem()">
         remove
       </button>
