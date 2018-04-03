@@ -1,33 +1,31 @@
-/* tslint:disable:no-unused-variable */
-
 import { TestBed, async } from '@angular/core/testing';
+
 import { AppComponent } from './app.component';
+import { ListManagerComponent } from './list-manager/list-manager.component';
+import { InputComponent } from './input/input.component';
+import { ItemComponent } from './todo-item/item.component';
+import { TodoListService } from './todo-list.service';
+import { TodoListStorageService } from './todo-list-storage.service';
 
 describe('App: TodoList', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        InputComponent,
+        ItemComponent,
+        ListManagerComponent
       ],
+      providers: [
+        TodoListService,
+        TodoListStorageService
+      ]
     });
   });
 
   it('should create the app', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
-  }));
-
-  it(`should have as title 'app works!'`, async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
-  }));
-
-  it('should render title in a h1 tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
   }));
 });
