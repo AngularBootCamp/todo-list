@@ -11,15 +11,15 @@ export class TodoListService {
     return this.storage.get();
   }
 
-  addItem(item) {
+  addItem(item: any) {
     return this.storage.post(item);
   }
 
-  removeItem(item) {
+  removeItem(item: any) {
     return this.storage.destroy(item);
   }
 
-  changeItemTitle(item, title) {
+  changeItemTitle(item: any, title: string) {
     return this.storage.put(item, { title });
   }
 }

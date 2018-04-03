@@ -14,7 +14,7 @@ const defaultList = [
 
 @Injectable()
 export class TodoListStorageService {
-  private todoList;
+  private todoList: any[];
 
   constructor() {
     this.todoList = JSON.parse(localStorage.getItem(storageName)) || defaultList;
@@ -24,17 +24,17 @@ export class TodoListStorageService {
     return [...this.todoList]; // returns a copy
   }
 
-  post(item) {
+  post(item: any) {
     this.todoList.push(item);
     return this.update();
   }
 
-  put(item, changes) {
+  put(item: any, changes: any) {
     Object.assign(this.todoList[this.findItemIndex(item)], changes);
     return this.update();
   }
 
-  destroy(item) {
+  destroy(item: any) {
     this.todoList.splice(this.findItemIndex(item), 1);
     return this.update();
   }
@@ -44,7 +44,7 @@ export class TodoListStorageService {
     return this.get();
   }
 
-  private findItemIndex(item) {
+  private findItemIndex(item: any) {
     return this.todoList.indexOf(item);
   }
 

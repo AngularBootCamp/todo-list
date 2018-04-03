@@ -24,7 +24,7 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent implements OnInit {
-  @Input() item;
+  @Input() item: any;
   @Output() remove:EventEmitter<any> = new EventEmitter();
   @Output() changeTitle:EventEmitter<any> = new EventEmitter();
 
@@ -44,7 +44,7 @@ export class ItemComponent implements OnInit {
     this.editing = true;
   }
 
-  changeItemTitle(newTitle) {
+  changeItemTitle(newTitle: string) {
     this.editing = false;
     this.changeTitle.emit({
       item: this.item,
