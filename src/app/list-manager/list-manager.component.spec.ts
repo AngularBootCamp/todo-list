@@ -1,9 +1,10 @@
-/* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
 
 import { ListManagerComponent } from './list-manager.component';
+import { TodoListService } from '../todo-list.service';
+import { InputComponent } from '../input/input.component';
+import { ItemComponent } from '../todo-item/item.component';
+import { TodoListStorageService } from '../todo-list-storage.service';
 
 describe('ListManagerComponent', () => {
   let component: ListManagerComponent;
@@ -11,9 +12,17 @@ describe('ListManagerComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ListManagerComponent ]
+      declarations: [
+        InputComponent,
+        ItemComponent,
+        ListManagerComponent
+      ],
+      providers: [
+        TodoListService,
+        TodoListStorageService
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
