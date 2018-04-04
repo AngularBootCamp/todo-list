@@ -1,14 +1,14 @@
 import { TestBed, inject } from '@angular/core/testing';
-import { TodoListStorageService } from './todo-list-storage.service';
+import { LocalStorageService } from './local-storage.service';
 
 describe('Service: TodoListStorage', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [TodoListStorageService]
+      providers: [LocalStorageService]
     });
   });
 
-  it('should ...', inject([TodoListStorageService], (service: TodoListStorageService) => {
+  it('should ...', inject([LocalStorageService], (service: LocalStorageService) => {
     expect(service).toBeTruthy();
   }));
 });

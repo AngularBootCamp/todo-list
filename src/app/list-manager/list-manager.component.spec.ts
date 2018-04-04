@@ -4,7 +4,7 @@ import { ListManagerComponent } from './list-manager.component';
 import { TodoListService } from '../todo-list.service';
 import { InputComponent } from '../input/input.component';
 import { ItemComponent } from '../todo-item/item.component';
-import { TodoListStorageService } from '../todo-list-storage.service';
+import { LocalStorageService } from '../local-storage.service';
 
 describe('ListManagerComponent', () => {
   let component: ListManagerComponent;
@@ -19,7 +19,7 @@ describe('ListManagerComponent', () => {
       ],
       providers: [
         TodoListService,
-        TodoListStorageService
+        LocalStorageService
       ]
     })
       .compileComponents();

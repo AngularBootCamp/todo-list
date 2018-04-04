@@ -5,7 +5,7 @@ import { ListManagerComponent } from './list-manager/list-manager.component';
 import { InputComponent } from './input/input.component';
 import { ItemComponent } from './todo-item/item.component';
 import { TodoListService } from './todo-list.service';
-import { TodoListStorageService } from './todo-list-storage.service';
+import { LocalStorageService } from './local-storage.service';
 
 describe('App: TodoList', () => {
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('App: TodoList', () => {
       ],
       providers: [
         TodoListService,
-        TodoListStorageService
+        LocalStorageService
       ]
     });
   });

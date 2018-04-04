@@ -1,12 +1,12 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { TodoListService } from './todo-list.service';
-import { TodoListStorageService } from './todo-list-storage.service';
+import { LocalStorageService } from './local-storage.service';
 
 describe('Service: TodoList', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
-        TodoListStorageService,
+        LocalStorageService,
         TodoListService
       ]
     });
