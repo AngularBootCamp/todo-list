@@ -27,13 +27,13 @@ import { TodoItem } from '../types';
 })
 export class ItemComponent {
   @Input() item: TodoItem;
-  @Output() remove = new EventEmitter<TodoItem>();
+  @Output() remove = new EventEmitter<void>();
   @Output() changeTitle = new EventEmitter<string>();
 
   editing = false;
 
   removeItem() {
-    this.remove.emit(this.item);
+    this.remove.emit();
   }
 
   editItem() {

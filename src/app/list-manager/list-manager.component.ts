@@ -16,7 +16,7 @@ import { TodoItem } from '../types';
       <ul>
         <li *ngFor="let item of todoList">
           <todo-item [item]="item"
-                    (remove)="removeItem($event)"
+                    (remove)="removeItem(item)"
                     (changeTitle)="changeItemTitle($event, item)">
           </todo-item>
         </li>
