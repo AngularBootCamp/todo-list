@@ -11,7 +11,6 @@ const defaultList = [
   { title: 'deploy app' },
 ];
 
-
 @Injectable()
 export class TodoListStorageService {
   private todoList: any[];
