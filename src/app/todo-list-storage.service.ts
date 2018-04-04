@@ -19,28 +19,28 @@ export class TodoListStorageService {
     this.todoList = JSON.parse(localStorage.getItem(storageName)) || defaultList;
   }
 
-  get() {
+  getList() {
     return [...this.todoList]; // returns a copy
   }
 
-  post(item: any) {
+  createItem(item: any) {
     this.todoList.push(item);
-    return this.update();
+    return this.updateLocalStorage();
   }
 
-  put(item: any, changes: any) {
+  updateItem(item: any, changes: any) {
     Object.assign(item, changes);
-    return this.update();
+    return this.updateLocalStorage();
   }
 
-  destroy(item: any) {
+  deleteItem(item: any) {
     this.todoList.splice(this.todoList.indexOf(item), 1);
-    return this.update();
+    return this.updateLocalStorage();
   }
 
-  private update() {
+  private updateLocalStorage() {
     localStorage.setItem(storageName, JSON.stringify(this.todoList));
-    return this.get();
+    return this.getList();
   }
 
 }

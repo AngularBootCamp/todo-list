@@ -9,18 +9,18 @@ export class TodoListService {
   }
 
   getTodoList() {
-    return this.storage.get();
+    return this.storage.getList();
   }
 
   addItem(item: any) {
-    return this.storage.post(item);
+    return this.storage.createItem(item);
   }
 
   removeItem(item: any) {
-    return this.storage.destroy(item);
+    return this.storage.deleteItem(item);
   }
 
   changeItemTitle(item: any, title: string) {
-    return this.storage.put(item, { title });
+    return this.storage.updateItem(item, { title });
   }
 }
