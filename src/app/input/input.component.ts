@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, Output, EventEmitter, Input } from '@angular/core';
 
 @Component({
   selector: 'todo-input',
@@ -17,18 +17,12 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
   `,
   styleUrls: ['./input.component.css']
 })
-export class InputComponent implements OnInit {
+export class InputComponent {
   @Input() title = '';
-  @Output() submit: EventEmitter<string> = new EventEmitter();
-  @Output() cancel: EventEmitter<any> = new EventEmitter();
+  @Output() submit = new EventEmitter<string>();
+  @Output() cancel = new EventEmitter<void>();
 
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
-  changeTitle(newTitle: string): void {
+  changeTitle(newTitle: string) {
     this.submit.emit(newTitle);
   }
 

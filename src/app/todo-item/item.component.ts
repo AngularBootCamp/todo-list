@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
+import { Component, Input, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'todo-item',
@@ -23,18 +23,12 @@ import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
   `,
   styleUrls: ['./item.component.css']
 })
-export class ItemComponent implements OnInit {
+export class ItemComponent {
   @Input() item: any;
-  @Output() remove: EventEmitter<any> = new EventEmitter();
-  @Output() changeTitle: EventEmitter<any> = new EventEmitter();
+  @Output() remove = new EventEmitter<any>();
+  @Output() changeTitle = new EventEmitter<any>();
 
   editing = false;
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
 
   removeItem() {
     this.remove.emit(this.item);
