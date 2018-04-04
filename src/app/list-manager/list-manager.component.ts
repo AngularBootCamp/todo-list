@@ -17,7 +17,7 @@ import { TodoItem } from '../types';
         <li *ngFor="let item of todoList">
           <todo-item [item]="item"
                     (remove)="removeItem($event)"
-                    (changeTitle)="changeItemTitle($event)">
+                    (changeTitle)="changeItemTitle($event, item)">
           </todo-item>
         </li>
       </ul>
@@ -44,7 +44,7 @@ export class ListManagerComponent implements OnInit {
     this.todoList = this.todoListService.removeItem(item);
   }
 
-  changeItemTitle({item, newTitle}: any) {
-    this.todoListService.changeItemTitle(item, newTitle);
+  changeItemTitle(newTitle: string, item: TodoItem) {
+    this.todoListService.changeItemTitle(newTitle, item);
   }
 }

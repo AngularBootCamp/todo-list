@@ -37,7 +37,7 @@ export class TodoListService {
     return this.todoList;
   }
 
-  changeItemTitle(item: TodoItem, title: string) {
+  changeItemTitle(title: string, item: TodoItem) {
     item.title = title;
     this.storage.save(this.todoList);
     return this.todoList;

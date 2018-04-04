@@ -28,7 +28,7 @@ import { TodoItem } from '../types';
 export class ItemComponent {
   @Input() item: TodoItem;
   @Output() remove = new EventEmitter<TodoItem>();
-  @Output() changeTitle = new EventEmitter<any>();
+  @Output() changeTitle = new EventEmitter<string>();
 
   editing = false;
 
@@ -42,10 +42,7 @@ export class ItemComponent {
 
   changeItemTitle(newTitle: string) {
     this.editing = false;
-    this.changeTitle.emit({
-      item: this.item,
-      newTitle
-    });
+    this.changeTitle.emit(newTitle);
   }
 
   cancelEdit() {
