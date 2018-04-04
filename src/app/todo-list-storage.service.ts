@@ -29,22 +29,18 @@ export class TodoListStorageService {
   }
 
   put(item: any, changes: any) {
-    Object.assign(this.todoList[this.findItemIndex(item)], changes);
+    Object.assign(item, changes);
     return this.update();
   }
 
   destroy(item: any) {
-    this.todoList.splice(this.findItemIndex(item), 1);
+    this.todoList.splice(this.todoList.indexOf(item), 1);
     return this.update();
   }
 
   private update() {
     localStorage.setItem(storageName, JSON.stringify(this.todoList));
     return this.get();
-  }
-
-  private findItemIndex(item: any) {
-    return this.todoList.indexOf(item);
   }
 
 }
