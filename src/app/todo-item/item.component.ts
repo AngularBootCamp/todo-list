@@ -1,5 +1,7 @@
 import { Component, Input, EventEmitter, Output } from '@angular/core';
 
+import { TodoItem } from '../types';
+
 @Component({
   selector: 'todo-item',
   template: `
@@ -24,8 +26,8 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent {
-  @Input() item: any;
-  @Output() remove = new EventEmitter<any>();
+  @Input() item: TodoItem;
+  @Output() remove = new EventEmitter<TodoItem>();
   @Output() changeTitle = new EventEmitter<any>();
 
   editing = false;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { TodoListService } from '../todo-list.service';
+import { TodoItem } from '../types';
 
 @Component({
   selector: 'todo-list-manager',
@@ -26,7 +27,7 @@ import { TodoListService } from '../todo-list.service';
 })
 export class ListManagerComponent implements OnInit {
   title = 'My Todos';
-  todoList: any[];
+  todoList: TodoItem[];
 
   constructor(private todoListService: TodoListService) {
   }
@@ -39,7 +40,7 @@ export class ListManagerComponent implements OnInit {
     this.todoList = this.todoListService.addItem({ title });
   }
 
-  removeItem(item: any) {
+  removeItem(item: TodoItem) {
     this.todoList = this.todoListService.removeItem(item);
   }
 
